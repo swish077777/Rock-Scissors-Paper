@@ -1,0 +1,139 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+ </head>
+ <style>
+     .rsp {
+        display: inline-block;
+
+    }
+
+    body {
+        margin: auto;
+        text-align: center;
+    }
+
+
+
+ </style>
+ <body>
+    <h1>Game On!</h1>
+
+    <div class="rsp">
+        <p class="p1">Player 1</p>
+        <img class="img1" src="images/rsp1.jpg">
+    </div>
+
+    <div class="rsp">
+        <p class="p2">Player 2</p>
+        <img class="img2" src="images/rsp1.jpg">
+    </div>
+
+    <div class="click me">
+        <button style="background-color: green; color: white; padding: 10px 24px;"
+         onClick="window.location.reload();">Click Me</button>
+    </div>
+</div>
+
+
+<script>
+
+    var randomPicture1 = Math.floor(Math.random() *3) + 1;
+    console.log(randomPicture1);
+
+    var randomImage = "rsp" + randomPicture1 +".jpg"
+    console.log(randomImage);
+
+    var randomImagesource ="images/" + randomImage;
+    console.log(randomImagesource);
+
+    var image1 = document.querySelectorAll("img")[0];
+
+    image1.setAttribute(`src`, randomImagesource);
+
+
+    var randomPicture2 = Math.floor(Math.random() *3) + 1;
+    console.log(randomPicture2);
+
+    var randomImage2 = "rsp" + randomPicture2 +".jpg"
+    console.log(randomImage2);
+
+    var randomImagesource2 ="images/" + randomImage2;
+    console.log(randomImagesource2);
+
+    var image2 = document.querySelectorAll("img")[1];
+
+    image2.setAttribute(`src`, randomImagesource2); 
+
+    var rock = "rsp1.jpg"
+    var scissor = "rsp3.jpg"
+    var paper = "rsp2.jpg"
+
+
+    if(randomImage === rock && randomImage2 === scissor) {
+        document.querySelector("h1").innerHTML = "Rock wins!"
+        document.querySelector('.p1').innerHTML = "<strong>✅Player 1 Wins!</strong>";
+        document.querySelector('.p2').innerHTML = "❌<strike> Player 2 Lose!</strike>";
+
+    } else if (randomImage === scissor && randomImage2 ===rock) {
+        document.querySelector("h1").innerHTML = "Rock wins!"
+        document.querySelector('.p1').innerHTML = "❌<strike>Player 1 Lose!</strike>";
+        document.querySelector('.p2 ').innerHTML = "<strong>✅ Player 2 Wins!</strong>";
+    }
+
+    if(randomImage === scissor && randomImage2 === paper) {
+        document.querySelector("h1").innerHTML = "Scissor wins!"
+        document.querySelector('.p1').innerHTML = "<strong>✅Player 1 Wins!</strong>";
+        document.querySelector('.p2').innerHTML = "❌<strike> Player 2 Lose!</strike>";
+
+    } else if (randomImage === paper && randomImage2 === scissor) {
+        document.querySelector("h1").innerHTML = "Scissor wins!"
+        document.querySelector('.p1').innerHTML = "❌<strike>Player 1 Lose!</strike>";
+        document.querySelector('.p2 ').innerHTML = "<strong>✅ Player 2 Wins!</strong>";
+        
+    }
+
+    if(randomImage === paper && randomImage2 === rock) {
+        document.querySelector("h1").innerHTML = "Paper wins!"
+        document.querySelector('.p1').innerHTML = "<strong>✅Player 1 Wins!</strong>";
+        document.querySelector('.p2').innerHTML = "❌<strike> Player 2 Lose!</strike>";
+
+    } else if (randomImage === rock && randomImage2 === paper ) {
+        document.querySelector("h1").innerHTML = "Paper wins!"
+        document.querySelector('.p1').innerHTML = "❌<strike>Player 1 Lose!</strike>";
+        document.querySelector('.p2 ').innerHTML = "<strong>✅ Player 2 Wins!</strong>";
+        
+    }
+
+
+    if(randomImage === scissor && randomImage2 === scissor) {
+        document.querySelector("h1").innerHTML = "DRAW"
+        document.querySelector('.p1').innerHTML = "🙌<strike>Draw!</strike>";
+        document.querySelector('.p2 ').innerHTML = "🙌<strike>Draw!</strike>";
+    }
+    if(randomImage === paper && randomImage2 === paper) {
+        document.querySelector("h1").innerHTML = "DRAW"
+        document.querySelector('.p1').innerHTML = "🙌<strike>Draw!</strike>";
+        document.querySelector('.p2 ').innerHTML = "🙌<strike>Draw!</strike>";
+    }
+    if(randomImage === rock && randomImage2 === rock) {
+        document.querySelector("h1").innerHTML = "DRAW"
+        document.querySelector('.p1').innerHTML = "🙌<strike>Draw!</strike>";
+        document.querySelector('.p2 ').innerHTML = "🙌<strike>Draw!</strike>";
+        
+    }
+
+
+
+</script>
+    <footer>
+        <div class="ftr">
+            <p>Copyright © Eric Palabay, Made with 🖤</p>
+        </div>
+    </footer>
+ </body>
+ </html>
